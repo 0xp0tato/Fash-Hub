@@ -2,6 +2,8 @@
 
 import Cookies from "js-cookie";
 
+import { server } from "../../config";
+
 export const addNewProduct = async (formData) => {
   try {
     const response = await fetch("/api/admin/add-product", {
@@ -23,7 +25,7 @@ export const addNewProduct = async (formData) => {
 
 export const getAllAdminProducts = async () => {
   try {
-    const res = await fetch("/api/admin/all-products", {
+    const res = await fetch(`${server}/api/admin/all-products`, {
       method: "GET",
       cache: "no-store",
     });
