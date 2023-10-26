@@ -17,8 +17,8 @@ export async function POST(req) {
         payment_method_types: ["card"],
         line_items: res,
         mode: "payment",
-        success_url: "http://fash-ej5ic7n5b-0xp0tato.vercel.app/checkout" + "?status=success",
-        cancel_url: "http://fash-ej5ic7n5b-0xp0tato.vercel.app/checkout" + "?status=cancel",
+        success_url: "https://cheerful-sfogliatella-72fcb7.netlify.app/checkout" + "?status=success",
+        cancel_url: "https://cheerful-sfogliatella-72fcb7.netlify.app/checkout" + "?status=cancel",
       });
 
       return NextResponse.json({
