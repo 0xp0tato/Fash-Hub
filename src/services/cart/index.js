@@ -1,4 +1,5 @@
 import Cookies from "js-cookie";
+import { server } from "../../config";
 
 export const addToCart = async (formData) => {
   try {
@@ -11,7 +12,7 @@ export const addToCart = async (formData) => {
       body: JSON.stringify(formData),
     });
 
-    console.log(res)
+    console.log(res);
 
     const data = await res.json();
 
@@ -23,15 +24,12 @@ export const addToCart = async (formData) => {
 
 export const getAllCartItems = async (id) => {
   try {
-    const res = await fetch(
-      `https://cheerful-sfogliatella-72fcb7.netlify.app/api/cart/all-cart-items?id=${id}`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${Cookies.get("token")}`,
-        },
-      }
-    );
+    const res = await fetch(`${server}/api/cart/all-cart-items?id=${id}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    });
 
     const data = await res.json();
 

@@ -77,7 +77,7 @@ export const deleteAProduct = async (id) => {
 export const productByCategory = async (id) => {
   try {
     const res = await fetch(
-      `https://cheerful-sfogliatella-72fcb7.netlify.app/api/admin/product-by-category?id=${id}`,
+      `${server}/api/admin/product-by-category?id=${id}`,
       {
         method: "GET",
         cache: "no-store",
@@ -94,13 +94,10 @@ export const productByCategory = async (id) => {
 
 export const productById = async (id) => {
   try {
-    const res = await fetch(
-      `https://cheerful-sfogliatella-72fcb7.netlify.app/api/admin/product-by-id?id=${id}`,
-      {
-        method: "GET",
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(`${server}/api/admin/product-by-id?id=${id}`, {
+      method: "GET",
+      cache: "no-store",
+    });
 
     const data = await res.json();
 
